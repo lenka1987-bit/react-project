@@ -46,7 +46,8 @@ form {
   margin-left: 20px;
 }
 .right-col {
-  margin-left: -110px;
+  text-align: left;
+
   font-size: 18px;
 }
 .h4-heading {

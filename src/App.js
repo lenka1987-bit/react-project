@@ -1,11 +1,13 @@
 
 import './App.css';
+import Weather from "./Weather";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
-      <button className="btn btn-primary">WEATHER APP</button> 
+        <Weather/>
+      <footer><small>Coded by Lenka Doubravova</small></footer> 
      </div>   
     </div>
   );

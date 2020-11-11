@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatedDate from "./FormatedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -10,7 +11,7 @@ export default function Weather(props) {
             ready: true, 
             temperature: response.data.main.temp,
             wind: response.data.wind.speed,
-            date: "Monday, 12:20",
+            date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             city: response.data.name,
@@ -26,7 +27,7 @@ export default function Weather(props) {
             <input type="submit" value="GO!!!" className="input-submit"/>
          </form> 
         <h1 className="h1-city">{weatherData.city}</h1>
-        <h5 className="h5-date">{weatherData.date}</h5>
+        <h5 className="h5-date"><FormatedDate date={weatherData.date}/></h5>
          <div className="row">
             <div className="col-6">
                <ul>

@@ -43,6 +43,7 @@ form {
 }
 
 .description {
+  text-transform: capitalize;
   margin-left: 20px;
 }
 .right-col {

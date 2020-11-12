@@ -38,8 +38,10 @@ form {
   text-align: left;
   margin-left: 130px;
 }
-.img {
+canvas {
   margin-left: 62px;
+  position: relative;
+  bottom: -10px;
 }
 
 .description {
@@ -55,8 +57,10 @@ form {
   margin-top: 35px;
 }
 .temperature {
-  font-size: 48px;
-  position: relative;
-  top: 14px;
+  font-size: 50px;
   margin-left: 10px;
+}
+.units {
+  position: relative;
+  bottom: 18px;
 }

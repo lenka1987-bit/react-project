@@ -8,6 +8,7 @@ export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
     function handleResponse(response) {
+        console.log(response)
         setWeatherData( {
             ready: true, 
             temperature: response.data.main.temp,
@@ -16,7 +17,7 @@ export default function Weather(props) {
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             city: response.data.name,
-            imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+            icon: response.data.weather[0].icon,
         });
     }
 
@@ -27,12 +28,12 @@ export default function Weather(props) {
         }
 
         function handleSubmit(event) {
-            event.prevenDefault();
+            event.preventDefault();
             search();
         }  
 
         function handleCityChange(event){
-            setCity(event.target.value)
+            setCity(event.target.value);
         }
 
     if (weatherData.ready) {
@@ -52,7 +53,7 @@ export default function Weather(props) {
             className="input-submit"
             />
          </form>
-         < WeatherData data={weatherData} />
+         <WeatherData data={weatherData} />
      </div> 
       ); 
     }

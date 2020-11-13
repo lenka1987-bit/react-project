@@ -18,6 +18,7 @@ export default function Weather(props) {
             humidity: response.data.main.humidity,
             city: response.data.name,
             icon: response.data.weather[0].icon,
+            sunrise: response.data.sys.sunrise * 1000,
         });
     }
 

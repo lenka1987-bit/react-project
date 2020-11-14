@@ -25,7 +25,7 @@ export default function WeatherData(props){
             </div>
             <div className="col-6">
                 <ul className="right-col">
-                    <li><strong>Sunrise:</strong> {props.data.sunrise}</li>
+                     <li><strong>Sunrise:</strong> {props.data.sunrise}</li>
                     <li><strong>Sunset:</strong>  17:40</li>
                     <li><strong>Humidity:</strong> {props.data.humidity} %</li>
                     <li><strong>Wind:</strong> {props.data.wind} m/s</li>

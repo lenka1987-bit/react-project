@@ -2,9 +2,24 @@ import React from "react";
 import FormatedDate from "./FormatedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherUnits from "./WeatherUnits";
+//import FormatedHours from "./FormatedHours";
 
 
 export default function WeatherData(props){
+    function addZero(i){
+        if (i < 10) {
+            i = "0" + i;
+        } return i;
+    }
+     let sunrise = new Date(props.data.sunrise);
+     let hoursSunrise = addZero(sunrise.getHours());
+     let minutesSunrise = addZero(sunrise.getMinutes());
+     let sunset = new Date(props.data.sunset);
+     let hoursSunset = addZero(sunset.getHours());
+     let minutesSunset = addZero(sunset.getMinutes());
+
+
+
     return ( 
         
     <div className = "weatherData">
@@ -25,8 +40,8 @@ export default function WeatherData(props){
             </div>
             <div className="col-6">
                 <ul className="right-col">
-                     <li><strong>Sunrise:</strong> {props.data.sunrise}</li>
-                    <li><strong>Sunset:</strong>  17:40</li>
+                    <li><strong>Sunrise:</strong> {hoursSunrise}:{minutesSunrise}</li>
+                    <li><strong>Sunset:</strong> {hoursSunset}:{minutesSunset}</li>
                     <li><strong>Humidity:</strong> {props.data.humidity} %</li>
                     <li><strong>Wind:</strong> {props.data.wind} m/s</li>
                 </ul>

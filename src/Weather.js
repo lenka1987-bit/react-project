@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherData from "./WeatherData";
-import FormatedDate from "./FormatedDate";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
     
@@ -19,7 +19,8 @@ export default function Weather(props) {
             humidity: response.data.main.humidity,
             city: response.data.name,
             icon: response.data.weather[0].icon,
-            sunrise: response.data.sys.sunrise,
+            sunrise: new Date(response.data.sys.sunrise * 1000),
+            sunset: new Date(response.data.sys.sunset * 1000),
         });
     }
 
@@ -40,7 +41,7 @@ export default function Weather(props) {
 
     if (weatherData.ready) {
         return (
-     <div className = "weather">
+     <div className = "weather shadow">
          <form onSubmit={handleSubmit}>    
             <input 
              type="search"
@@ -56,6 +57,7 @@ export default function Weather(props) {
             />
          </form>
          <WeatherData data={weatherData} />
+         <WeatherForecast city={weatherData.city} />
      </div> 
       ); 
     }

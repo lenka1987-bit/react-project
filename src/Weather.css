@@ -30,6 +30,7 @@ form {
   background-color: rosybrown;
 }
 .h1-city {
+  font-weight: 600;
   margin-top: 15px;
 }
 .h5-date {
